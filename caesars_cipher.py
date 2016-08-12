@@ -16,7 +16,11 @@ def rot13(encoded_string):
     string_list = list(encoded_string)
     string_code = map(ord, string_list)
     
-    string_translate = [unichr(element) if element < 65 or element > 90 else unichr(element + 13) if element <=77 else unichr(element - 13)  for element in string_code ]
+    string_translate = [unichr(element) if element < 65 or element > 90 
+                            else unichr(element + 13) if element <=77 
+                            else unichr(element - 13)  
+                        for element in string_code ]
+                
     return "".join(string_translate)
     
 print rot13("SERR PBQR PNZC!");
